@@ -136,10 +136,9 @@ async def on_ready():
     print("===---===")
 
 
-# TODO: display time elapsed since ping
 @edarbot.command()
 async def ping(ctx: commands.Context):
-    await ctx.send("Pong!")
+    await ctx.send(f"Pong! Responded in `{round(edarbot.latency * 1000, 2)}ms`")
 
 
 @edarbot.command()
