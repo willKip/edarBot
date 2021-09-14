@@ -3,6 +3,7 @@
 
 import discord
 from discord.ext import commands
+from private.config import token
 import logging
 import random
 import asyncio
@@ -19,8 +20,6 @@ logger.addHandler(handler)
 description = '''Personal multipurpose DnD Session Aid bot.\nIn memoriam of the fallen Robo Edar.'''
 intents = discord.Intents.default()
 edarbot = commands.Bot(command_prefix="!", description=description, intents=intents)
-
-token = "ODg3MDc4MzQ0MjkyNjk2MDkw.YT-6Fg.2CWVdREOjMYRxV1VcrfX7lJZj9E"
 
 # Youtube_dl setup
 youtube_dl.utils.bug_reports_message = lambda: ''  # Suppress noise about console usage from errors
