@@ -137,6 +137,12 @@ async def on_ready():
     print("===---===")
 
 
+# TODO: display time elapsed since ping
+@edarbot.command()
+async def ping(ctx: commands.Context):
+    await ctx.send("Pong!")
+
+
 @edarbot.command()
 async def roll(ctx, dice: str):
     """Rolls a dice in NdN format."""
