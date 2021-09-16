@@ -1,4 +1,5 @@
 from discord.ext import commands
+import discord
 import random
 
 
@@ -12,6 +13,12 @@ class General(commands.Cog):
     async def ping(self, ctx: commands.Context):
         """Get the bot's current websocket latency."""
         await ctx.send(f"Pong! Responded in `{round(self.bot.latency * 1000, 2)}ms`")
+
+    @commands.command(name="setstatus")
+    async def setstatus(self, ctx: commands.Context, *, text: str):
+        """Set the bot's status."""
+        # TODO: unset status
+        await self.bot.change_presence(activity=discord.Game(name=text))
 
     @commands.command()
     async def roll(self, ctx, dice: str):
