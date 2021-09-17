@@ -1,8 +1,10 @@
 from discord.ext import commands
 import discord
 import random
+import time
 
 
+# noinspection PyUnusedLocal
 class General(commands.Cog):
     """A couple of simple commands."""
 
@@ -11,8 +13,14 @@ class General(commands.Cog):
 
     @commands.command()
     async def ping(self, ctx: commands.Context):
-        """Get the bot's current websocket latency."""
-        await ctx.send(f"Pong! Responded in `{round(self.bot.latency * 1000, 2)}ms`")
+        """Get the bot's current websocket and API latency."""
+
+        start_time = time.time()
+        message = await ctx.send("Testing ping...")
+        end_time = time.time()
+
+        await message.edit(content=f"Pong! `Websocket: {round(self.bot.latency * 1000, 2)}ms`, "
+                                   f"`API: {round((end_time - start_time) * 1000, 2)}ms`")
 
     @commands.command(name="setstatus")
     async def setstatus(self, ctx: commands.Context, *, text: str):

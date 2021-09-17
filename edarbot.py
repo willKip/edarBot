@@ -17,7 +17,7 @@ handler = logging.FileHandler(filename="discord.log", encoding="utf-8", mode="w"
 handler.setFormatter(logging.Formatter("%(asctime)s:%(levelname)s:%(name)s: %(message)s"))
 logger.addHandler(handler)
 
-description = '''Personal multipurpose DnD Session Aid bot.\nIn memoriam of the fallen Robo Edar.'''
+description = """Personal multipurpose DnD Session Aid bot.\nIn memoriam of the fallen Robo Edar."""
 intents = discord.Intents.default()
 edarbot = commands.Bot(command_prefix="!", description=description, intents=intents)
 
