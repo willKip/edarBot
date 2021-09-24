@@ -23,10 +23,18 @@ class General(commands.Cog):
                                    f"`API: {round((end_time - start_time) * 1000, 2)}ms`")
 
     @commands.command(name="setstatus")
+    @commands.cooldown(rate=1, per=30)
     async def setstatus(self, ctx: commands.Context, *, text: str):
         """Set the bot's status."""
-        # TODO: unset status
+        # TODO: unsetting status
         await self.bot.change_presence(activity=discord.Game(name=text))
+
+    @setstatus.error
+    async def setstatus_error(self, ctx: commands.Context, error):
+        if isinstance(error, commands.CommandOnCooldown):
+            await ctx.send(f"This command is on cooldown, try again after {round(error.retry_after)} seconds.",
+                           delete_after=5)
+        print(error)
 
     @commands.command()
     async def roll(self, ctx, dice: str):
