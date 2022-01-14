@@ -1,3 +1,4 @@
 py-cord[voice]
+boto
 youtube_dl
 python-dotenv==0.13.0
