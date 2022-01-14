@@ -1,4 +1,4 @@
 # edarBot
-Personal Discord bot built on Pycord.
+Personal Discord bot built on Pycord and hosted on Heroku.
 
-Better description and credits TBA.
+Currently in development; more detailed README to be added later.
