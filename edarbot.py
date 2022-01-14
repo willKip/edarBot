@@ -5,7 +5,7 @@
 
 import discord
 from discord.ext import commands
-from private.config import token
+from dotenv import dotenv_values
 import logging
 
 
@@ -32,4 +32,4 @@ async def on_ready():
     print("=" * 10 + "-" * 20 + "=" * 10)
 
 
-edarbot.run(token)
+edarbot.run(dotenv_values(".env")["DISCORD_TOKEN"])

@@ -1,0 +1,12 @@
+{
+    "name": "edarBot",
+    "description": "Personal Discord bot built on Pycord.",
+    "repository": "https://github.com/willKip/edarBot",
+    "keywords": ["discord", "bot", "pycord"],
+    "env": {
+        "DISCORD_TOKEN": {
+          "description": "Discord bot key, used to authenticate with Discord APIs."
+        }
+      }
+}
+  

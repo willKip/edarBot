@@ -1,4 +1,9 @@
-/private/
 /discord.log
-/ffmpeg.exe
-/bot-env/pyvenv.cfg
+/.vscode
+/bot-env
+/__pycache__
+/env
+/.env
+/cogs/__pycache__
+/.gitignore
+/discord.log
