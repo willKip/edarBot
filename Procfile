@@ -1,1 +1,1 @@
-worker: python edarbot.py
+worker: python3 edarbot.py
