@@ -6,8 +6,7 @@
 import os
 import discord
 from discord.ext import commands
-from boto.s3.connection import S3Connection
-token = S3Connection(os.environ['DISCORD_TOKEN'])
+token = os.environ['DISCORD_TOKEN']
 import logging
 
 
