@@ -5,7 +5,8 @@
 
 import discord
 from discord.ext import commands
-from dotenv import dotenv_values
+from boto.s3.connection import S3Connection
+token = S3Connection(os.environ['DISCORD_TOKEN'])
 import logging
 
 
@@ -32,4 +33,4 @@ async def on_ready():
     print("=" * 10 + "-" * 20 + "=" * 10)
 
 
-edarbot.run(dotenv_values(".env")["DISCORD_TOKEN"])
+edarbot.run(token)
